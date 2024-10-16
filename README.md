@@ -77,6 +77,8 @@ WHERE Ranking <= 5
 
 ![images](images/Ranking.png)
 
+- [SQL Data Exploration Analysis](https://github.com/galaes/Layoffs-exploratory-data-analysis/blob/5c4220d79d1b81889677e050b667cb8d9a120657/Data%20Exploratory%20Analysis-%20Layoffs%20dataset.sql)
+
 #### 3. Data Visualization
 
 #### 4. Insights and Findings
