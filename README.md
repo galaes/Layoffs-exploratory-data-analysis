@@ -29,7 +29,7 @@ The dataset of layoff from March 2020 to March 2023 (https://rb.gy/6we5n5), cont
 
 #### 1. Data Collection and Preparation
 
-The data cleaning was done in the [Layoffs Data Cleaning Project](https://github.com/galaes/layoffs-data-cleaning/blob/3c1c60ecad47e0939bf8d2c2489d68079a5c21eb/README.md) which includes:
+The data cleaning was done in the [Layoffs Data Cleaning Project](https://github.com/galaes/layoffs-data-cleaning/blob/3c1c60ecad47e0939bf8d2c2489d68079a5c21eb/README.md), which includes:
 - Data loading and inspection
 - Handling missing and duplicate values
 - Standardizing the structure   
@@ -52,7 +52,8 @@ SELECT `MONTH`, total_off,
 SUM(total_off) OVER(ORDER BY `MONTH`) AS rolling_total
 FROM Rolling_Total;
 ```
-![image](images/location_names.png)
+
+![images](images/total_by_year_month.png)
 
 - What was the top 5 ranking of laid-off for each year?
 
@@ -73,6 +74,8 @@ FROM Company_Year_Rank
 WHERE Ranking <= 5
 ;
 ```
+
+![images](images/Ranking.png)
 
 #### 3. Data Visualization
 
