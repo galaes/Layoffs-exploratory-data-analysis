@@ -13,7 +13,8 @@ The primary goal of this project is to perform an exploratory data analysis (EDA
 
 ### Dataset
 
-The layoffs dataset consist of the following information:
+The dataset of layoff from March 2020 to March 2023 (https://rb.gy/6we5n5), containing the following key features
+
 - Company: Name of the company
 - Location: Location of the company
 - Industry: Industry of the company
@@ -26,7 +27,56 @@ The layoffs dataset consist of the following information:
 
 ### Methodology
 
+#### 1. Data Collection and Preparation
 
+The data cleaning was done in the [Layoffs Data Cleaning Project](https://github.com/galaes/layoffs-data-cleaning/blob/3c1c60ecad47e0939bf8d2c2489d68079a5c21eb/README.md) which includes:
+- Data loading and inspection
+- Handling missing and duplicate values
+- Standardizing the structure   
+
+#### 2. Descriptive Analysis
+
+The analysis include answers to questions such as:
+- What was the total laid off for each year and month?
+
+```sql
+WITH Rolling_Total AS
+(
+SELECT SUBSTRING(`date`, 1,7) AS `MONTH`, SUM(total_laid_off) AS total_off
+FROM layoffs_staging2
+WHERE SUBSTRING(`date`, 1,7) IS NOT NULL
+GROUP BY `MONTH`
+ORDER BY `MONTH` ASC
+)
+SELECT `MONTH`, total_off,
+SUM(total_off) OVER(ORDER BY `MONTH`) AS rolling_total
+FROM Rolling_Total;
+```
+![image](images/location_names.png)
+
+- What was the top 5 ranking of laid-off for each year?
+
+```sql
+WITH Company_Year (company, years, total_laid_off) AS
+(
+SELECT company, YEAR(`date`), SUM(total_laid_off) 
+FROM layoffs_staging2
+GROUP BY company, YEAR(`date`)
+), Company_Year_Rank AS
+(SELECT *, 
+DENSE_RANK() OVER (PARTITION BY years ORDER BY total_laid_off DESC) AS Ranking
+FROM Company_Year
+WHERE years IS NOT NULL
+)
+SELECT *
+FROM Company_Year_Rank
+WHERE Ranking <= 5
+;
+```
+
+#### 3. Data Visualization
+
+#### 4. Insights and Findings
 
 ### Tools
 
