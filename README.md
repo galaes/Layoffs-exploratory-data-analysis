@@ -55,9 +55,8 @@ SELECT `MONTH`, total_off,
 SUM(total_off) OVER(ORDER BY `MONTH`) AS rolling_total
 FROM Rolling_Total;
 ```
-
-![images](images/total_by_year_month.png)
-
+<img src="images/total_by_year_month.png" width="20%" alt="images">
+  
 - What was the top 5 ranking of laid-off for each year?
 
 ```sql
@@ -77,8 +76,7 @@ FROM Company_Year_Rank
 WHERE Ranking <= 5
 ;
 ```
-
-![images](images/Ranking.png)
+<img src="images/Ranking.png" width="25%" alt="images">
 
 - [SQL Data Exploration Analysis](https://github.com/galaes/Layoffs-exploratory-data-analysis/blob/5c4220d79d1b81889677e050b667cb8d9a120657/Data%20Exploratory%20Analysis-%20Layoffs%20dataset.sql)
 
