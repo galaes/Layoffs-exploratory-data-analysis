@@ -25,7 +25,7 @@ The dataset of layoffs from March 2020 to March 2023 (https://rb.gy/6we5n5) cont
 - Funds Raised Millions: Amount of capital the company has raised from investors in millions of dollars
 
 ### Tools
-- SQL for exploratory data analysis.
+- MySQL for exploratory data analysis.
 - Tableau for data visualization.
 
 ### Methodology
