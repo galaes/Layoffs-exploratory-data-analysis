@@ -39,6 +39,8 @@ The data cleaning was done in the [Layoffs Data Cleaning Project](https://github
 
 #### 2. Descriptive Analysis
 
+- [SQL Data Exploration Analysis](https://github.com/galaes/Layoffs-exploratory-data-analysis/blob/5c4220d79d1b81889677e050b667cb8d9a120657/Data%20Exploratory%20Analysis-%20Layoffs%20dataset.sql)
+
 The analysis includes answers to questions such as:
 - What was the total laid off for each year and month?
 
@@ -77,8 +79,6 @@ WHERE Ranking <= 5
 ;
 ```
 <img src="images/Ranking.png" width="25%" alt="images">
-
-- [SQL Data Exploration Analysis](https://github.com/galaes/Layoffs-exploratory-data-analysis/blob/5c4220d79d1b81889677e050b667cb8d9a120657/Data%20Exploratory%20Analysis-%20Layoffs%20dataset.sql)
 
 #### 3. Data Visualization
 
